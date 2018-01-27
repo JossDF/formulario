@@ -33,7 +33,7 @@
                             <div class="form-group">
                                 <label for="date">Date of birth</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control datepicker" name="date_birth">
+                                    <input type="text" class="form-control datepicker" name="date_birth" required>
                                     <div class="input-group-addon">
                                         <span class="fa fa-calendar"></span>
                                     </div>
@@ -61,40 +61,7 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="row">
-                        <div class="col-md-2">
-                            <b>Employment status</b>
-                        </div>
-                        <div class="col-md-3">
-                            Ongoing
-                            {{ Form::radio("status", 'ongoing', false) }}
-                        </div>
-                        <div class="col-md-3">
-                            Temporary
-                            {{ Form::radio("status", 'temporary', false) }}
-                        </div>
-                        <div class="col-md-4">
-                            Full-time
-                            {{ Form::radio("status", 'full_time', false) }}
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-md-4">
-                            Part-time
-                            {{ Form::radio("status", 'part_time', false) }}
-                        </div>
-                        <div class="col-md-4">
-                            Casual
-                            {{ Form::radio("status", 'casual', false) }}
-                        </div>
-                        <div class="col-md-4">
-                            Other
-                            {{ Form::radio("status", 'other', false) }}
-                            {!! Form::text("other_text",'', array('class' => 'form-control')) !!}
-                        </div>
-                    </div>
+                    {!! BootForm::radios("employment_status", "Employment status:", $status, null, true)!!} 
                     {!! BootForm::number("hour_work","Ordinay hours of work (for part-time or full-time employee):") !!}
                     {!! BootForm::text("pay_method","Agreed/required method of pay:") !!}
                     {!! BootForm::text("pay_period","Agreed/required pay period:") !!}

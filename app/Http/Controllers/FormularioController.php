@@ -13,7 +13,15 @@ class FormularioController extends Controller
      */
     public function index()
     {
-        return view('formulario');
+        $status = [
+            'ongoing' => 'Ongoing',
+            'temporary' => 'Temporary',
+            'full_time' => 'Full-timeMale',
+            'part_time' => 'Part-time',
+            'casual' => 'Casual',
+            'other' => 'Other'
+        ];
+        return view('formulario', compact('status'));
     }
 
     /**
@@ -38,9 +46,10 @@ class FormularioController extends Controller
             'name' => 'required',
             'date_birth' => 'required',
             'address' => 'required',
-            'status' => 'required',
+            'employment_status' => 'required',
             'hour_work' => 'required',
         ]);
+        return redirect()->route('formulario.index');
     }
 
     /**
