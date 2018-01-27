@@ -16,7 +16,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><b>Employer details</b></div>
                 <div class="panel-body">
-                    {!! BootForm::text("registered","Registered:") !!}
+                    {!! BootForm::select('registered', 'Registered:', $empresas) !!}
                     {!! BootForm::text("trading_name","Trading name:") !!}
                     {!! BootForm::text("abn","ABN:") !!}
                 </div>

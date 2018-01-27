@@ -21,7 +21,14 @@ class FormularioController extends Controller
             'casual' => 'Casual',
             'other' => 'Other'
         ];
-        return view('formulario', compact('status'));
+        $empresas = $this->listadoEmpresas();
+        return view('formulario', compact('status','empresas'));
+    }
+
+    public function listadoEmpresas() {
+        $path = storage_path() . "/json/fortune500.json";         
+        $json = json_decode(file_get_contents($path), true);
+        return $json['companies'];
     }
 
     /**
