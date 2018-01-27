@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',  ["uses"=>"FormularioController@index","as"=>"formulario.index"]);
+Route::resource('formulario',"FormularioController");
