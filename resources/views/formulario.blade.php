@@ -75,14 +75,34 @@
                             {{ Form::radio("status", 'temporary', false, array('required' => 'required')) }}
                         </div>
                         <div class="col-md-4">
-                            Other
-                            {{ Form::radio("status", 'other', false, array('required' => 'required')) }}
-                            {!! Form::text("other_text",'', false) !!}
+                            Full-time
+                            {{ Form::radio("status", 'full_time', false, array('required' => 'required')) }}
                         </div>
                     </div>
                     
-                    
-                    
+                    <div class="row">
+                        <div class="col-md-4">
+                            Part-time
+                            {{ Form::radio("status", 'part_time', false, array('required' => 'required')) }}
+                        </div>
+                        <div class="col-md-4">
+                            Casual
+                            {{ Form::radio("status", 'casual', false, array('required' => 'required')) }}
+                        </div>
+                        <div class="col-md-4">
+                            Other
+                            {{ Form::radio("status", 'other', false, array('required' => 'required')) }}
+                            {!! Form::text("other_text",'', array('class' => 'form-control')) !!}
+                        </div>
+                    </div>
+                    {!! BootForm::number("hour_work","Ordinay hours of work (for part-time or full-time employee):") !!}
+                    {!! BootForm::text("pay_method","Agreed/required method of pay:") !!}
+                    {!! BootForm::text("pay_period","Agreed/required pay period:") !!}
+                    {!! BootForm::text("pay_day","Agreed/required pay day:") !!}
+                    {!! BootForm::text("apprenticeship","Apprenticeship/Traineeship:") !!}
+                    {!! BootForm::text("award_name","Name of Award or Agreement that:") !!}
+                    {!! BootForm::text("job_title","Classification/job title under the:") !!}
+                    {!! BootForm::submit('Enviar') !!}
                 </div>
             </div>
         </div>
