@@ -34,7 +34,13 @@ class FormularioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'date_birth' => 'required',
+            'address' => 'required',
+            'status' => 'required',
+            'hour_work' => 'required',
+        ]);
     }
 
     /**

@@ -68,30 +68,30 @@
                         </div>
                         <div class="col-md-3">
                             Ongoing
-                            {{ Form::radio("status", 'ongoing', false, array('required' => 'required')) }}
+                            {{ Form::radio("status", 'ongoing', false) }}
                         </div>
                         <div class="col-md-3">
                             Temporary
-                            {{ Form::radio("status", 'temporary', false, array('required' => 'required')) }}
+                            {{ Form::radio("status", 'temporary', false) }}
                         </div>
                         <div class="col-md-4">
                             Full-time
-                            {{ Form::radio("status", 'full_time', false, array('required' => 'required')) }}
+                            {{ Form::radio("status", 'full_time', false) }}
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="col-md-4">
                             Part-time
-                            {{ Form::radio("status", 'part_time', false, array('required' => 'required')) }}
+                            {{ Form::radio("status", 'part_time', false) }}
                         </div>
                         <div class="col-md-4">
                             Casual
-                            {{ Form::radio("status", 'casual', false, array('required' => 'required')) }}
+                            {{ Form::radio("status", 'casual', false) }}
                         </div>
                         <div class="col-md-4">
                             Other
-                            {{ Form::radio("status", 'other', false, array('required' => 'required')) }}
+                            {{ Form::radio("status", 'other', false) }}
                             {!! Form::text("other_text",'', array('class' => 'form-control')) !!}
                         </div>
                     </div>
